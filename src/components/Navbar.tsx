@@ -1,44 +1,33 @@
 import React from 'react';
 import { Link } from '@tanstack/react-router';
-import { Users } from 'lucide-react';
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-[#831c1c] backdrop-blur sticky top-0 z-50 shadow-sm">
-      <div className="w-full flex items-center justify-between px-6 py-2">
-        {/* Logo and Title on the left */}
-        <div className="flex items-center gap-3">
-          <Link
-            to="/"
-            className="flex gap-3 font-serif text-white text-lg px-2 py-1 transition hover:underline hover:underline-offset-4 hover:text-[#fbeaea]"
-          >
-            <Users size={38} strokeWidth={2.5} className="text-white" />
-            <span className="font-serif text-2xl font-bold text-white tracking-tight select-none">CodeCollab</span>
-          </Link>
-        </div>
-        {/* Navigation links*/}
-        <div className="flex items-center gap-4">
-          <Link
-            to="/projects"
-            className="font-serif text-white text-lg px-2 py-1 transition hover:underline hover:underline-offset-4 hover:text-[#fbeaea]"
-          >
-            Projects
-          </Link>
-          <Link
-            to="/members"
-            className="font-serif text-white text-lg px-2 py-1 transition hover:underline hover:underline-offset-4 hover:text-[#fbeaea]"
-          >
-            Members
-          </Link>
-          <Link
-            to="/join"
-            className="font-serif bg-white text-[#831c1c] rounded-lg px-6 py-1.5 text-lg transition hover:bg-[#fbeaea] hover:text-[#a02c2c] shadow-sm"
-          >
-            Join
-          </Link>
-        </div>
-      </div>
-    </nav>
+    <header className="flex justify-between items-center px-12 py-8 bg-[#bd7581] shadow-md sticky top-0 z-50">
+      <Link
+        to="/"
+        className="text-5xl font-extrabold hover:opacity-80 tracking-tight text-[#2d2d2d]"
+      >
+        CodeCollab
+      </Link>
+      <nav className="flex gap-x-12 text-xl font-bold">
+        <a href="#about" className="hover:text-[#a3747e] transition text-[#2d2d2d]">
+          About
+        </a>
+        <Link to="/projects" className="hover:text-[#a3747e] transition text-[#2d2d2d]">
+          Projects
+        </Link>
+        <Link to="/members" className="hover:text-[#a3747e] transition text-[#2d2d2d]">
+          Members
+        </Link>
+        <Link
+          to="/join"
+          className="hover:text-[#a3747e] transition text-[#2d2d2d]"
+        >
+          Join
+        </Link>
+      </nav>
+    </header>
   );
 };
 

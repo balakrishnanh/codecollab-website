@@ -15,10 +15,12 @@
     "@tailwindcss/typography": "^0.5.16",
     "@tanstack/react-router": "^1.121.34",
     "axios": "^1.10.0",
+    "framer-motion": "^12.23.12",
     "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-markdown": "^10.1.0",
+    "react-simple-typewriter": "^5.0.1",
     "remark-gfm": "^4.0.1",
     "tanstack": "^1.0.0"
   },

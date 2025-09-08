@@ -1,9 +1,7 @@
 import Footer from '../components/Footer';
-import { Section, Container, GridSection } from '../components/SectionContainer';
 import Navbar from '../components/Navbar';
 import MemberCard from '../components/MemberCard';
-import { Link } from '@tanstack/react-router';
-
+import BubbleBackground from '../bubblebackground';
 
 const Members = () => { 
     const memberFiles = import.meta.glob('/content/members/*.mdx', { eager: true });
@@ -19,15 +17,20 @@ const Members = () => {
             github: frontmatter.github,
         };
     });
+    
     return ( 
-        
-        <div className="min-h-screen flex flex-col">
+        <div className="relative overflow-hidden">
+            {/* Bubble Background */}
+            <BubbleBackground />
+            
+            {/* Navbar */}
             <Navbar />
-            <Section className="flex-grow bg-gradient-to-b from-[#fbeaea] via-white to-[#a02c2c]/30">
-                <Container className="py-8 min-h-[calc(100vh-64px-80px)]">
-                    <h1 className="text-4xl font-bold text-[#831c1c] text-center mb-8 font-serif">Members</h1>
+            
+            <section className="min-h-screen px-6 py-16 relative z-20">
+                <div className="max-w-6xl mx-auto">
+                    <h1 className="text-5xl font-semibold text-center mb-12" style={{color: '#000000'}}>Members</h1>
                     
-                    <GridSection cols="3" className="max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                         {membersData.map((member) => (
                             <MemberCard 
                                 key={member.slug}
@@ -36,12 +39,12 @@ const Members = () => {
                                 role={member.role}
                                 avatar={member.avatar}
                                 github={member.github}
-                                // description={member.content}
                             />
                         ))}
-                    </GridSection>
-                </Container>
-            </Section>
+                    </div>
+                </div>
+            </section>
+            
             <Footer />
         </div>
     )

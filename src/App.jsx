@@ -1,10 +1,12 @@
-import { Outlet,Link } from "@tanstack/react-router";
+import { Outlet } from "@tanstack/react-router";
 
 function App() {
   return (
-    <div className="min-h-screen flex-col items-center justify-center bg-gray-100 text-3xl font-bold text-blue-600">
-      {/* CodeCollab Website Setup Complete 🚀 */}
-      <div> <Outlet /> </div>
+    <div className="flex flex-col min-h-screen bg-[transparent] text-[#2d2d2d]">
+      {/* Page Content */}
+      <main className="flex-grow w-full">
+        <Outlet />
+      </main>
     </div>
   );
 }
