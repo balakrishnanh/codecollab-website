@@ -11,9 +11,9 @@ const Navbar = () => {
         CodeCollab
       </Link>
       <nav className="flex gap-x-12 text-xl font-bold">
-        <a href="#about" className="hover:text-[#a3747e] transition text-[#2d2d2d]">
+        {/* <a href="#about" className="hover:text-[#a3747e] transition text-[#2d2d2d]">
           About
-        </a>
+        </a> */}
         <Link to="/projects" className="hover:text-[#a3747e] transition text-[#2d2d2d]">
           Projects
         </Link>
@@ -21,10 +21,16 @@ const Navbar = () => {
           Members
         </Link>
         <Link
+          to="/contactUs"
+          className="hover:text-[#a3747e] transition text-[#2d2d2d]"
+        >
+          Contact Us
+        </Link>
+        <Link
           to="/join"
           className="hover:text-[#a3747e] transition text-[#2d2d2d]"
         >
-          Join
+          Join Fall Cycle!
         </Link>
       </nav>
     </header>

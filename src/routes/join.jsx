@@ -2,88 +2,107 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BubbleBackground from '../bubblebackground';
+import { Send } from 'lucide-react';
 
 const Join = () => {
     return (
         <div className="relative overflow-hidden">
-            {/* Bubble Background */}
+            {/* Background and Navigation */}
             <BubbleBackground />
-            
-            {/* Navbar */}
             <Navbar />
             
-            <section className="min-h-screen px-6 py-16 relative z-20">
-                <div className="max-w-6xl mx-auto flex items-center justify-center">
+            <section className="min-h-screen px-6 py-16 relative z-20 flex items-center justify-center">
+                <div className="max-w-4xl mx-auto w-full">
+                    <h1 className="text-5xl font-semibold text-center mb-4 text-black">
+                        Join the Fall Project Cycle!
+                    </h1>
+                    <p className="text-center text-lg text-gray-600 mb-8">
+                        Apply to be a part of our collaborative projects. Applications are open until [enter date].
+                    </p>
+                    
+                    {/* Main Form Card */}
                     <form 
                         action="https://formspree.io/f/myzpyabw" 
                         method="POST"
-                        className="bg-[#f5f1f1] p-8 rounded-xl shadow-lg w-full max-w-md flex flex-col items-center space-y-6"
+                        className="bg-white/60 backdrop-blur-sm border border-red-100 rounded-2xl shadow-xl shadow-red-500/10 p-8 md:p-12 w-full max-w-2xl mx-auto space-y-6"
                     >
-                        <h1 className="text-3xl font-bold mb-4" style={{color: '#000000'}}>Join CodeCollab</h1>
-                        
+                        {/* Name Input */}
                         <div className="w-full">
-                            <label htmlFor="yourName" className="block text-lg mb-2" style={{color: '#000000'}}>Your Name:</label>
+                            <label htmlFor="yourName" className="block text-lg font-medium mb-2 text-gray-700">
+                                Your Name
+                            </label>
                             <input
                                 type="text"
                                 id="yourName"
                                 name="name"
                                 required
-                                className="w-full p-3 border border-gray-300 rounded-lg"
+                                className="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"
                                 placeholder="Enter your name"
                             />
                         </div>
 
+                        {/* Email Input */}
                         <div className="w-full">
-                            <label htmlFor="email" className="block text-lg mb-2" style={{color: '#000000'}}>Your Email:</label>
+                            <label htmlFor="email" className="block text-lg font-medium mb-2 text-gray-700">
+                                Your Email
+                            </label>
                             <input
                                 type="email"
                                 id="email"
                                 name="email"
                                 required
-                                className="w-full p-3 border border-gray-300 rounded-lg"
-                                placeholder="Enter your email"
+                                className="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"
+                                placeholder="Enter your UMass email"
                             />
                         </div>
 
+                        {/* Interested Projects Radio Buttons */}
                         <div className="w-full">
-                            <label className="block text-lg mb-3" style={{color: '#000000'}}>Interested Projects:</label>
-                            <div className="space-y-2">
-                                <label className="flex items-center text-base cursor-pointer" style={{color: '#000000'}}>
+                            <label className="block text-lg font-medium mb-3 text-gray-700">
+                                Interested Projects (Select one)
+                            </label>
+                            <div className="space-y-3">
+                                {/* Option 1 */}
+                                <label className="flex items-center text-base cursor-pointer p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-red-50 hover:border-red-200 transition">
                                     <input
                                         type="radio"
                                         name="interestedProjects"
-                                        value="option1"
-                                        className="mr-2 h-4 w-4"
+                                        value="Project Option 1"
+                                        className="mr-3 h-5 w-5 accent-red-600"
                                         required
                                     />
-                                    Option 1
+                                    <span className="text-gray-800">Project Option 1</span>
                                 </label>
-                                <label className="flex items-center text-base cursor-pointer" style={{color: '#000000'}}>
+                                {/* Option 2 */}
+                                <label className="flex items-center text-base cursor-pointer p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-red-50 hover:border-red-200 transition">
                                     <input
                                         type="radio"
                                         name="interestedProjects"
-                                        value="option2"
-                                        className="mr-2 h-4 w-4"
+                                        value="Project Option 2"
+                                        className="mr-3 h-5 w-5 accent-red-600"
                                     />
-                                    Option 2
+                                    <span className="text-gray-800">Project Option 2</span>
                                 </label>
-                                <label className="flex items-center text-base cursor-pointer" style={{color: '#000000'}}>
+                                {/* Option 3 */}
+                                <label className="flex items-center text-base cursor-pointer p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-red-50 hover:border-red-200 transition">
                                     <input
                                         type="radio"
                                         name="interestedProjects"
-                                        value="option3"
-                                        className="mr-2 h-4 w-4"
+                                        value="Project Option 3"
+                                        className="mr-3 h-5 w-5 accent-red-600"
                                     />
-                                    Option 3
+                                    <span className="text-gray-800">Project Option 3</span>
                                 </label>
                             </div>
                         </div>
                         
+                        {/* Submit Button */}
                         <button
                             type="submit"
-                            className="w-full bg-[#bd7581] text-[#2d2d2d] text-xl py-3 rounded-lg shadow-md hover:bg-[#a3747e] transition-colors duration-200"
+                            className="w-full inline-flex items-center justify-center gap-2 bg-red-600 text-white font-semibold text-xl py-3 rounded-lg shadow-md hover:bg-red-700 transition-transform transform hover:scale-105"
                         >
-                            Submit Form
+                            Submit Application
+                            <Send className="w-5 h-5" />
                         </button>
                     </form>
                 </div>

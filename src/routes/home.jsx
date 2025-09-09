@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BubbleBackground from '../bubblebackground';
+import { Typewriter } from "react-simple-typewriter"
 
 const Home = () => { 
     return ( 
@@ -21,7 +22,17 @@ const Home = () => {
                     <h1 className="text-5xl font-extrabold mb-6 tracking-tight text-black">
                         Welcome to{" "}
                         <span className="text-[#d18495]">
-                            CodeCollab
+                            <Typewriter
+                                words={[
+                                "CodeCollab",
+                                ]}
+                                loop={true}
+                                cursor
+                                cursorStyle="|"
+                                typeSpeed={80}
+                                deleteSpeed={50}
+                                delaySpeed={1500}
+                            />
                         </span>
                     </h1>
                 </div>
@@ -37,20 +48,25 @@ const Home = () => {
             {/* About Section */}
             <section
                 id="about"
-                className="min-h-screen px-6 py-16 relative z-20"
+                className="bg-white text-[#2d2d2d] min-h-screen px-6 py-16 relative z-20"
             >
                 <div>
-                    <h2 className="text-5xl font-semibold text-center mb-12" style={{color: '#000000'}}>About CodeCollab</h2>
+                    <h2 className="text-5xl font-semibold text-center mb-12" style={{color: '#000000'}} id="about">About CodeCollab</h2>
                     <div className="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto">
                         <div className="bg-[#f5f1f1] p-6 md:p-8 max-w-xl text-left font-mono text-sm shadow-md ml-18">
                             <p style={{color: '#000000'}}>
-                                CodeCollab is a student-led initiative at UMass where you actually build real tech projects in teams. 
-                                We provide the support, mentorship, and resources you need to grow as a developer.
+                                A student-led initiative at UMass Amherst <br></br>
+                                🤝 Build hands-on coding projects in small teams <br></br>
+                                🎯 Designed for all skill levels — beginner, intermediate, and advanced <br></br>
+                                <strong>📈 Focused on: </strong>
                             </p>
-                            <p className="mt-4" style={{color: '#000000'}}>
-                                Whether you're just starting out or looking to build something amazing, 
-                                we're here to help you turn your ideas into reality.
-                            </p>
+                                <ul className="list-disc list-inside space-y-1 text-black">
+                                    <li>Technical skill-building</li>
+                                    <li> Resume development</li>
+                                    <li> Peer collaboration</li>
+                                    <li> Project-based learning</li>
+                                </ul>
+
                         </div>
 
                         <img
@@ -59,6 +75,38 @@ const Home = () => {
                             className="w-72 h-auto rounded-md shadow-md"
                         />
                     </div>
+
+                    <div className="flex flex-col md:flex-row items-start gap-8 max-w-6xl mx-auto py-16">
+                        {/* Why we started */}
+                        <div className="flex flex-col items-center flex-1">
+                            <h3 className="font-semibold text-3xl text-center m-4">
+                            Why we Started CodeCollab?
+                            </h3>
+                            <div className="bg-[#f5f1f1] p-6 md:p-8 max-w-xl text-left font-mono text-sm shadow-md rounded-2xl">
+                                {/* <strong>We noticed a gap:</strong> */}
+                                <ul className="list-disc list-inside space-y-1 text-black">
+                                    <li>Students often struggle to start projects on their own</li>
+                                    <li>Lack of structure makes it hard to stay motivated</li>
+                                    <li>Intimidating to work solo or without guidance</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* What do we do */}
+                        <div className="flex flex-col items-center flex-1">
+                            <h3 className="font-semibold text-3xl text-center m-4">
+                            What do we do?
+                            </h3>
+                            <div className="bg-[#f5f1f1] p-6 md:p-8 max-w-xl text-left font-mono text-sm shadow-md rounded-2xl">
+                            <ul className="list-disc list-inside space-y-1 text-black">
+                                <li>Offer pre-scoped, beginner-friendly project ideas</li>
+                                <li>Provide structure, timelines, and team support</li>
+                                <li>Help you complete something real, not just start it</li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 

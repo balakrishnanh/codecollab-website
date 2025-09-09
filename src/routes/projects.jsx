@@ -1,32 +1,56 @@
-import React from 'react';
+// src/pages/Projects.tsx
+
+import React, { useEffect, useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BubbleBackground from '../bubblebackground';
+import { fetchReposForUser } from '../api/fetchprojects'; // Make sure path is correct
+
+// Define the list of projects you want to display
+const projectList = [
+    { username: "ptajwani", repo: "Financial-News-Sentiment-Analysis-Stock-Movement-Prediction" },
+    { username: "mishtigala19", repo: "weather-event-notifier" },
+    { username: "mishtigala19", repo: "codecollab-website" },
+    { username: "supriyaahejib", repo: "personal-portfolio-template" },
+    { username: "rbose21-05", repo: "PersonalPortfolio_CodeCollab" },
+    { username: "Romaisafatima1", repo: "Cryptocurrency-Time-Series-Forecasting-Volatility-Modeling" },
+];
 
 const Projects = () => { 
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        const fetchAllProjects = async () => {
+            try {
+                // Use Promise.all to fetch all repositories concurrently for efficiency
+                const projectData = await Promise.all(
+                    projectList.map(p => fetchReposForUser(p.username, [p.repo]))
+                );
+                // The API returns an array for each call, so we flatten the result
+                setProjects(projectData.flat());
+            } catch (error) {
+                console.error("Failed to fetch project data:", error);
+            }
+        };
+
+        fetchAllProjects();
+    }, []); // Empty dependency array ensures this runs only once on mount
+
     return ( 
         <div className="relative overflow-hidden">
-            {/* Bubble Background */}
             <BubbleBackground />
-            
-            {/* Navbar */}
             <Navbar />
             
             <section className="min-h-screen px-6 py-16 relative z-20">
-                <div className="max-w-6xl mx-auto">
+                <div className="max-w-7xl mx-auto">
                     <h1 className="text-5xl font-semibold text-center mb-12" style={{color: '#000000'}}>Projects</h1>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                        <ProjectCard
-                            username="ptajwani"
-                            repos={["Financial-News-Sentiment-Analysis-Stock-Movement-Prediction"]}
-                        />
-                        <ProjectCard username="mishtigala19" repos={["weather-event-notifier"]} />
-                        <ProjectCard username="mishtigala19" repos={["codecollab-website"]}/> 
-                        <ProjectCard username="supriyaahejib" repos={["personal-portfolio-template"]} />
-                        <ProjectCard username="rbose21-05" repos={["PersonalPortfolio_CodeCollab"]} />
-                        <ProjectCard username="Romaisafatima1" repos={["Cryptocurrency-Time-Series-Forecasting-Volatility-Modeling"]} />
+                    {/* The grid now maps over the state and renders the simple ProjectCard */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        {projects.map((project, index) => (
+                            <ProjectCard key={index} project={project} />
+                        ))}
                     </div>
                 </div>
             </section>
