@@ -9,7 +9,7 @@ import BubbleBackground from '../bubblebackground';
 const Members = () => { 
     const memberFiles = import.meta.glob('/content/members/*.mdx', { eager: true });
 
-    const membersData = Object.entries(memberFiles).map(([path, module]) => {
+    let membersData = Object.entries(memberFiles).map(([path, module]) => {
         const { frontmatter } = module;
         const slug = path.split('/').pop().replace(/\.mdx?$/, '');
         
@@ -20,12 +20,14 @@ const Members = () => {
             avatar: frontmatter.avatar,
             github: frontmatter.github,
             role: frontmatter.role,
-            position: frontmatter.position,
             year: frontmatter.year,
             major: frontmatter.major,
-            minors: frontmatter.minors,
+            minors: frontmatter.minors ?? frontmatter.minor ?? null,
+            order: frontmatter.order ?? 999,
         };
     });
+
+    membersData.sort((a,b) => (a.order - b.order) || a.name.localeCompare(b.name));
     
     return ( 
         <div className="relative overflow-hidden">
@@ -34,9 +36,9 @@ const Members = () => {
             
             <section className="min-h-screen px-6 py-16 relative z-20">
                 <div className="max-w-6xl mx-auto">
-                    <h1 className="text-5xl font-semibold text-center mb-12" style={{color: '#000000'}}>Members</h1>
+                    <h1 className="text-5xl font-semibold text-center mb-12 font-playfair" style={{color: '#000000'}}>E-Board Members</h1>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center font-playfair">
                         {membersData.map((member) => (
                             <MemberCard key={member.slug} member={member} />
                         ))}

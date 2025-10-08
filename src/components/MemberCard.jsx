@@ -5,14 +5,14 @@ import { Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function MemberCard({ member }) {
-    const { slug, name, avatar, github, position, year, major, minors } = member;
+    const { slug, name, avatar, github, position, year, major, minors, role } = member;
     
     return (
         <motion.div 
             className="bg-white/50 backdrop-blur-sm border rounded-2xl shadow-lg shadow-red-500/5 p-6 w-full max-w-sm flex flex-col items-center text-center transition-transform transform hover:-translate-y-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease:"easeOut" }}
+            transition={{ duration: 0.25, ease:"easeIn" }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
         >
@@ -32,6 +32,12 @@ export default function MemberCard({ member }) {
                     {name}
                 </Link>
             </h2>
+
+            <h3 className="text-xl text-gray-700">
+                <Link to={`/members/${slug}`} className="hover:text-red-700">
+                    {role}
+                </Link>
+            </h3>
             
             {/* Position */}
             <p className="text-md font-medium text-red-600 mb-3">{position}</p>

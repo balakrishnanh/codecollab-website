@@ -44,7 +44,7 @@ const Projects = () => {
             
             <section className="min-h-screen px-6 py-16 relative z-20">
                 <div className="max-w-7xl mx-auto">
-                    <h1 className="text-5xl font-semibold text-center mb-12" style={{color: '#000000'}}>Projects</h1>
+                    <h1 className="text-5xl font-semibold font-playfair text-center mb-12" style={{color: '#000000'}}>Projects</h1>
                     
                     {/* The grid now maps over the state and renders the simple ProjectCard */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

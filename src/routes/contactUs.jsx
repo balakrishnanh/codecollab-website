@@ -15,7 +15,7 @@ const ContactUs = () => {
             
             <section className="min-h-screen px-6 py-16 relative z-20 flex items-center justify-center">
                 <div className="max-w-4xl mx-auto w-full">
-                    <h1 className="text-5xl font-semibold text-center mb-12 text-black">
+                    <h1 className="text-5xl font-semibold font-playfair text-center mb-12 text-black">
                         Get In Touch
                     </h1>
                     
@@ -27,25 +27,15 @@ const ContactUs = () => {
                         </p>
 
                         {/* Contact Information Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-12">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center mb-12">
                             
                             {/* General Email */}
                             <div className="flex flex-col items-center">
                                 <Mail className="w-10 h-10 mb-3 text-red-700" />
                                 <h3 className="text-xl font-semibold text-gray-800">Email Us</h3>
                                 <a href="mailto:placeholder@umass.edu" className="text-blue-600 hover:underline">
-                                    [CodeCollab Email]
+                                    umasscodecollab@gmail.com
                                 </a>
-                            </div>
-
-                            {/* Location */}
-                            <div className="flex flex-col items-center">
-                                <MapPin className="w-10 h-10 mb-3 text-red-700" />
-                                <h3 className="text-xl font-semibold text-gray-800">Find Us</h3>
-                                <p className="text-gray-600">
-                                    [Meeting Room #, Meeting Room]<br/>
-                                    [Other Address Line #]<br/>
-                                </p>
                             </div>
 
                             {/* Social Media */}
@@ -56,7 +46,6 @@ const ContactUs = () => {
                                     @CodeCollabUMass
                                 </a>
                             </div>
-
                         </div>
 
                         {/* Mailing List Call-to-Action */}
@@ -69,7 +58,7 @@ const ContactUs = () => {
                                 href="https://docs.google.com/forms/d/e/1FAIpQLSeRVfrgun_Qt9ujKHxDlqMNDkUViwXq42QTWUMc34b6FCtfHw/viewform?usp=dialog"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 bg-red-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-red-700 transition-transform transform hover:scale-105"
+                                className="inline-flex items-center gap-2 bg-cc-maroon text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-cc-maroonAccent transition-transform transform hover:scale-105"
                             >
                                 Sign Up Now
                                 <ArrowRight className="w-5 h-5" />

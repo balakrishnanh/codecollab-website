@@ -36,7 +36,7 @@ export default function ProjectCard({ project }) {
 
       {/* Text Section (Right Side) */}
       <div className="md:w-1/2 flex flex-col items-start justify-center p-8 bg-white">
-        <h3 className="text-3xl font-bold text-gray-800 mb-3">{project.name}</h3>
+        <h3 className="text-3xl font-bold font-playfair text-gray-800 mb-3">{project.name}</h3>
         <p className="text-lg text-gray-600 mb-6">{project.description}</p>
         {project.language && (
           <p className="text-md text-gray-500 mb-6">

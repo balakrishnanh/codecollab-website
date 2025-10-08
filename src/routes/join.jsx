@@ -13,20 +13,22 @@ const Join = () => {
             
             <section className="min-h-screen px-6 py-16 relative z-20 flex items-center justify-center">
                 <div className="max-w-4xl mx-auto w-full">
-                    <h1 className="text-5xl font-semibold text-center mb-4 text-black">
+                    <h1 className="text-5xl font-semibold font-playfair text-center mb-4 text-black">
                         Join the Fall Project Cycle!
                     </h1>
                     <p className="text-center text-lg text-gray-600 mb-8">
-                        Apply to be a part of our collaborative projects. Applications are open until [enter date].
+                        Apply to be a part of our collaborative projects.
                     </p>
                     
                     {/* Main Form Card */}
+                    
                     <form 
                         action="https://formspree.io/f/myzpyabw" 
                         method="POST"
                         className="bg-white/60 backdrop-blur-sm border border-red-100 rounded-2xl shadow-xl shadow-red-500/10 p-8 md:p-12 w-full max-w-2xl mx-auto space-y-6"
                     >
-                        {/* Name Input */}
+                        <p className="block text-3xl font-medium mb-2 text-gray-700 text-center font-playfair">Google Form Coming Soon!</p>
+                        {/* Name Input
                         <div className="w-full">
                             <label htmlFor="yourName" className="block text-lg font-medium mb-2 text-gray-700">
                                 Your Name
@@ -39,10 +41,10 @@ const Join = () => {
                                 className="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"
                                 placeholder="Enter your name"
                             />
-                        </div>
+                        </div> */}
 
                         {/* Email Input */}
-                        <div className="w-full">
+                        {/* <div className="w-full">
                             <label htmlFor="email" className="block text-lg font-medium mb-2 text-gray-700">
                                 Your Email
                             </label>
@@ -54,16 +56,16 @@ const Join = () => {
                                 className="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"
                                 placeholder="Enter your UMass email"
                             />
-                        </div>
+                        </div> */}
 
                         {/* Interested Projects Radio Buttons */}
-                        <div className="w-full">
+                        {/* <div className="w-full">
                             <label className="block text-lg font-medium mb-3 text-gray-700">
                                 Interested Projects (Select one)
                             </label>
-                            <div className="space-y-3">
+                            <div className="space-y-3"> */}
                                 {/* Option 1 */}
-                                <label className="flex items-center text-base cursor-pointer p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-red-50 hover:border-red-200 transition">
+                                {/* <label className="flex items-center text-base cursor-pointer p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-red-50 hover:border-red-200 transition">
                                     <input
                                         type="radio"
                                         name="interestedProjects"
@@ -72,9 +74,9 @@ const Join = () => {
                                         required
                                     />
                                     <span className="text-gray-800">Project Option 1</span>
-                                </label>
+                                </label> */}
                                 {/* Option 2 */}
-                                <label className="flex items-center text-base cursor-pointer p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-red-50 hover:border-red-200 transition">
+                                {/* <label className="flex items-center text-base cursor-pointer p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-red-50 hover:border-red-200 transition">
                                     <input
                                         type="radio"
                                         name="interestedProjects"
@@ -82,9 +84,9 @@ const Join = () => {
                                         className="mr-3 h-5 w-5 accent-red-600"
                                     />
                                     <span className="text-gray-800">Project Option 2</span>
-                                </label>
+                                </label> */}
                                 {/* Option 3 */}
-                                <label className="flex items-center text-base cursor-pointer p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-red-50 hover:border-red-200 transition">
+                                {/* <label className="flex items-center text-base cursor-pointer p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-red-50 hover:border-red-200 transition">
                                     <input
                                         type="radio"
                                         name="interestedProjects"
@@ -94,16 +96,16 @@ const Join = () => {
                                     <span className="text-gray-800">Project Option 3</span>
                                 </label>
                             </div>
-                        </div>
+                        </div> */}
                         
                         {/* Submit Button */}
-                        <button
+                        {/* <button
                             type="submit"
-                            className="w-full inline-flex items-center justify-center gap-2 bg-red-600 text-white font-semibold text-xl py-3 rounded-lg shadow-md hover:bg-red-700 transition-transform transform hover:scale-105"
+                            className="w-full inline-flex items-center justify-center gap-2 bg-cc-maroon text-white font-semibold text-xl py-3 rounded-lg shadow-md hover:bg-cc-maroonAccent transition-transform transform hover:scale-105"
                         >
                             Submit Application
                             <Send className="w-5 h-5" />
-                        </button>
+                        </button> */}
                     </form>
                 </div>
             </section>

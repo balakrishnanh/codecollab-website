@@ -1,16 +1,17 @@
 import React from 'react';
 import { Instagram, Github, Linkedin } from 'lucide-react';
+import logo from '../assets/codeLogo.png';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#bd7581] py-6 px-4 mt-10 text-[#2d2d2d] shadow-inner z-30 relative"> 
+    <footer className="bg-cc-maroon py-6 px-4 mt-10 text-[#ffe0e9ff] shadow-inner z-30 relative font-playfair"> 
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 animate-fadeIn transition-all duration-700">
           {/* Left: Logo */}
           <div className="flex items-center gap-4">
             <img
-              src="/codeLogo.png"
+              src={logo}
               alt="CodeCollab Logo"
-              className="w-15 h-15 rounded-full object-cover shadow-md hover:scale-105 transition-transform duration-300"
+              className="w-[100px] rounded-full object-cover shadow-md hover:scale-105 transition-transform bg-[#ffe0e9ff] duration-300"
             />
             <p className="font-semibold text-xl hidden sm:block">
               UMass CodeCollab

@@ -15,6 +15,8 @@ const membersData = Object.entries(memberFiles).map(([path, module]) => {
         name: frontmatter.name,
         role: frontmatter.role,
         avatar: frontmatter.avatar,
+        major: frontmatter.major,
+        minors: frontmatter.minors ?? frontmatter.minor ?? null,
         github: frontmatter?.github,
     };
 });
@@ -23,22 +25,7 @@ const MemberBio = () => {
     const { slug } = useParams();
     const member = membersData.find(m => m.slug === slug);
 
-    if (!member) {
-        return (
-            <div className="relative overflow-hidden">
-                <BubbleBackground />
-                <Navbar />
-                <section className="min-h-screen px-6 py-16 relative z-20">
-                    <div className="max-w-6xl mx-auto text-center text-2xl" style={{color: '#000000'}}>
-                        Member not found.
-                    </div>
-                </section>
-                <Footer />
-            </div>
-        );
-    }
-
-    const { name, role, avatar, github } = member;
+    const { name, role, avatar, github, Content } = member;
 
     return (
         <div className="relative overflow-hidden">
@@ -59,7 +46,7 @@ const MemberBio = () => {
                                     className="w-32 h-32 rounded-full object-cover mb-4 shadow-md"
                                 />
                             )}
-                            <h1 className="text-4xl font-bold mb-1" style={{color: '#000000'}}>{name}</h1>
+                            <h1 className="text-4xl font-bold font-playfair mb-1" style={{color: '#000000'}}>{name}</h1>
                             <p className="text-xl" style={{color: '#000000'}}>{role}</p>
                             {github && (
                                 <a
@@ -75,6 +62,11 @@ const MemberBio = () => {
                         <div className="prose max-w-none" style={{color: '#000000'}}>
                             <MDXProvider>
                                 <BioContent />
+                            </MDXProvider>
+                        </div>
+                        <div className="prose max-w-none" style={{color: '#000000'}}>
+                            <MDXProvider>
+                                <Content />
                             </MDXProvider>
                         </div>
                     </div>
