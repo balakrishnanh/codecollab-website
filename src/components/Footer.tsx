@@ -39,7 +39,7 @@ export default function Footer() {
                 <span>GitHub</span>
               </a>
               <a
-                href="https://www.linkedin.com/in/umasscodecollab/"
+                href="https://www.linkedin.com/company/umass-codecollab/about/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 hover:text-[#a3747e] transition duration-200"
