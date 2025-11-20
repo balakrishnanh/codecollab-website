@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BubbleBackground from '../bubblebackground';
 import { Typewriter } from "react-simple-typewriter"
-import logo from '../assets/codeLogo.png';
 
 const Home = () => { 
     return ( 
@@ -71,7 +70,7 @@ const Home = () => {
                         </div>
 
                         <img
-                            src={logo}
+                            src="/public/assets/codeLogo.png"
                             alt="CodeCollab Logo"
                             className="w-72 h-auto rounded-md shadow-md"
                         />
