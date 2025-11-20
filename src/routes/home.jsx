@@ -70,7 +70,7 @@ const Home = () => {
                         </div>
 
                         <img
-                            src="/public/assets/codeLogo.png"
+                            src="/assets/codeLogo.png"
                             alt="CodeCollab Logo"
                             className="w-72 h-auto rounded-md shadow-md"
                         />
