@@ -7,7 +7,7 @@ const Navbar = () => {
     <header className="flex flex-col mid:flex-row md:justify-between items-center px-4 sm:px-6 md:px-12 py-4 md:py-8 bg-cc-maroon font-playfair shadow-md sticky top-0 z-50 text-[#fce4eb]">
       <Link to="/" className="flex items-center gap-3">
         <img
-          src="/public/assets/codeLogo.png"
+          src="/assets/codeLogo.png"
           alt="CodeCollab Logo"
           className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-pink-100 object-cover"
         />
