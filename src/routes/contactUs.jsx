@@ -27,7 +27,7 @@ const ContactUs = () => {
                         </p>
 
                         {/* Contact Information Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center mb-12">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-12">
                             
                             {/* General Email */}
                             <div className="flex flex-col items-center">
@@ -44,6 +44,15 @@ const ContactUs = () => {
                                 <h3 className="text-xl font-semibold text-gray-800">Follow Us</h3>
                                 <a href="https://www.instagram.com/umasscodecollab/" className="text-blue-600 hover:underline">
                                     @CodeCollabUMass
+                                </a>
+                            </div>
+
+                            {/* LinkedIn */}
+                            <div className="flex flex-col items-center">
+                                <Linkedin className="w-10 h-10 mb-3 text-red-700" />
+                                <h3 className="text-xl font-semibold text-gray-800">Connect With Us</h3>
+                                <a href="https://www.linkedin.com/company/umass-codecollab/about//" className="text-blue-600 hover:underline">
+                                    UMass CodeCollab
                                 </a>
                             </div>
                         </div>

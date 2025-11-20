@@ -27,7 +27,7 @@ const Join = () => {
                         method="POST"
                         className="bg-white/60 backdrop-blur-sm border border-red-100 rounded-2xl shadow-xl shadow-red-500/10 p-8 md:p-12 w-full max-w-2xl mx-auto space-y-6"
                     >
-                        <p className="block text-3xl font-medium mb-2 text-gray-700 text-center font-playfair">Google Form Coming Soon!</p>
+                        <p className="block text-3xl font-medium mb-2 text-gray-700 text-center font-playfair">Google Form Closed!<br /> Check Back in Spring Semester</p>
                         {/* Name Input
                         <div className="w-full">
                             <label htmlFor="yourName" className="block text-lg font-medium mb-2 text-gray-700">

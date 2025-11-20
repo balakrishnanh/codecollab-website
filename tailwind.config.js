@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        mid: '981px',
+      },
       colors: {
         cc: {
           maroon: '#881c1c', // dark maroon
