@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import BubbleBackground from '../bubblebackground';
 import { Mail, MapPin, Instagram, Linkedin, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const ContactUs = () => { 
     return ( 
@@ -14,7 +15,12 @@ const ContactUs = () => {
             <Navbar />
             
             <section className="min-h-screen px-6 py-16 relative z-20 flex items-center justify-center">
-                <div className="max-w-4xl mx-auto w-full">
+                <motion.div
+                    className="max-w-4xl mx-auto w-full"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                >
                     <h1 className="text-5xl font-semibold font-playfair text-center mb-12 text-black">
                         Get In Touch
                     </h1>
@@ -74,7 +80,7 @@ const ContactUs = () => {
                             </a>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </section>
             
             <Footer />

@@ -28,7 +28,7 @@ const Navbar = () => {
           Contact Us
         </Link>
         <Link to="/join" className="hover:opacity-80 transition px-2 py-1">
-          Join Fall Cycle!
+          Join Spring Cycle!
         </Link>
       </nav>
     </header>

@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BubbleBackground from '../bubblebackground';
 import { Send } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Join = () => {
     return (
@@ -12,9 +13,14 @@ const Join = () => {
             <Navbar />
             
             <section className="min-h-screen px-6 py-16 relative z-20 flex items-center justify-center">
-                <div className="max-w-4xl mx-auto w-full">
+                <motion.div
+                    className="max-w-4xl mx-auto w-full"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                >
                     <h1 className="text-5xl font-semibold font-playfair text-center mb-4 text-black">
-                        Join the Fall Project Cycle!
+                        Join the Fall Spring Cycle!
                     </h1>
                     <p className="text-center text-lg text-gray-600 mb-8">
                         Apply to be a part of our collaborative projects.
@@ -107,7 +113,7 @@ const Join = () => {
                             <Send className="w-5 h-5" />
                         </button> */}
                     </form>
-                </div>
+                </motion.div>
             </section>
             
             <Footer />
