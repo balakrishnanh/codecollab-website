@@ -6,16 +6,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BubbleBackground from '../bubblebackground';
 import { fetchReposForUser } from '../api/fetchprojects'; // Make sure path is correct
-
-// Define the list of projects you want to display
-const projectList = [
-    { username: "ptajwani", repo: "Financial-News-Sentiment-Analysis-Stock-Movement-Prediction" },
-    { username: "mishtigala19", repo: "weather-event-notifier" },
-    { username: "mishtigala19", repo: "codecollab-website" },
-    { username: "supriyaahejib", repo: "personal-portfolio-template" },
-    { username: "rbose21-05", repo: "PersonalPortfolio_CodeCollab" },
-    { username: "Romaisafatima1", repo: "Cryptocurrency-Time-Series-Forecasting-Volatility-Modeling" },
-];
+import { projectList } from '../data/projects';
 
 const Projects = () => { 
     const [projects, setProjects] = useState([]);
@@ -23,12 +14,25 @@ const Projects = () => {
     useEffect(() => {
         const fetchAllProjects = async () => {
             try {
-                // Use Promise.all to fetch all repositories concurrently for efficiency
+                // Fetch all configured repositories and keep route metadata on each project.
                 const projectData = await Promise.all(
-                    projectList.map(p => fetchReposForUser(p.username, [p.repo]))
+                    projectList.map(async p => {
+                        const [repoData] = await fetchReposForUser(p.owner, [p.repo]);
+
+                        if (!repoData) {
+                            return null;
+                        }
+
+                        return {
+                            ...repoData,
+                            owner: p.owner,
+                            repo: p.repo,
+                            demoImages: p.demoImages ?? [],
+                        };
+                    })
                 );
-                // The API returns an array for each call, so we flatten the result
-                setProjects(projectData.flat());
+
+                setProjects(projectData.filter(Boolean));
             } catch (error) {
                 console.error("Failed to fetch project data:", error);
             }

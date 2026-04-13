@@ -1,14 +1,18 @@
 // src/components/ProjectCard.tsx
 
 import React from "react";
-import { Users, CodeXml } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Users, CodeXml, Github } from "lucide-react";
 import { motion } from "framer-motion";
+
+const MotionDiv = motion.div;
+const MotionImg = motion.img;
 
 export default function ProjectCard({ project }) {
   if (!project) return null; // Or a loading skeleton
 
   return (
-    <motion.div
+    <MotionDiv
       className="flex flex-col md:flex-row rounded-2xl shadow-lg shadow-red-500/10 overflow-hidden"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -20,7 +24,7 @@ export default function ProjectCard({ project }) {
       <div className="md:w-1/2 flex flex-col items-center justify-center p-8 bg-white min-h-[300px]">
         <a href={project.url} target="_blank" rel="noopener noreferrer" className="w-full h-full flex items-center justify-center">
           {project.avatar ? (
-            <motion.img src={project.avatar} alt={project.name} className="w-full h-auto max-h-[16rem] object-contain" whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} />
+            <MotionImg src={project.avatar} alt={project.name} className="w-full h-auto max-h-[16rem] object-contain" whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} />
           ) : (
             <div className="flex flex-col items-center justify-center gap-4 text-center">
               <Users size={48} strokeWidth={1.5} className="text-red-800/70" />
@@ -43,10 +47,25 @@ export default function ProjectCard({ project }) {
             <span className="font-semibold text-gray-600">Built with:</span> {project.language}
           </p>
         )}
-        <a href={project.url} target="_blank" rel="noopener noreferrer">
-          <span className="text-blue-600 hover:text-blue-800 font-semibold text-lg transition-colors">View Project →</span>
-        </a>
+        <div className="grid w-full grid-cols-2 gap-3 lg:grid-cols-1">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="order-1 lg:order-2 inline-flex items-center justify-center px-3 py-2 rounded-lg border border-blue-200 text-blue-700 hover:bg-blue-50 font-semibold transition-colors whitespace-nowrap"
+          >
+            <Github size={16} className="mr-2" />
+            View Project →
+          </a>
+          <Link
+            to="/projects/$owner/$repo"
+            params={{ owner: project.owner, repo: project.repo }}
+            className="order-2 lg:order-1 inline-flex items-center justify-center px-3 py-2 rounded-lg border border-blue-200 text-blue-700 hover:bg-blue-50 font-semibold transition-colors whitespace-nowrap"
+          >
+            View More
+          </Link>
+        </div>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 }

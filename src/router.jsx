@@ -12,6 +12,7 @@ import Members from './routes/members'
 import Home from './routes/home'
 import MemberBio from './routes/memberBio'
 import ContactUs from './routes/contactUs'
+import ProjectDetail from './routes/projectDetail'
 
 const rootRoute = new RootRoute({
     component:App,
@@ -42,6 +43,11 @@ const projectsRoute = new Route({
     path: '/projects',
     component: Projects
 })
+const projectDetailRoute = new Route({
+    getParentRoute: () => rootRoute,
+    path: '/projects/$owner/$repo',
+    component: ProjectDetail
+})
 
 const contactUsRoute = new Route({ 
     getParentRoute: () => rootRoute,
@@ -50,6 +56,6 @@ const contactUsRoute = new Route({
 })
 
 
-const routeTree = rootRoute.addChildren([homeRoute,joinRoute,membersRoute.addChildren([memberBioRoute]),projectsRoute, contactUsRoute])
+const routeTree = rootRoute.addChildren([homeRoute,joinRoute,membersRoute.addChildren([memberBioRoute]),projectsRoute, projectDetailRoute, contactUsRoute])
 
 export const router = createRouter({routeTree})
